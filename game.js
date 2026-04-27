@@ -290,8 +290,13 @@ function goToNextLevel() {
     // 清空障碍物
     obstacles = [];
     
-    // 重置关卡时间
+    // 重置赛道偏移
+    trackOffset = 0;
+    
+    // 重置关卡时间 - 关键修复
+    gameState.time = 0;
     gameState.lastSpeedIncreaseTime = 0;
+    gameTime = 0; // 这个变量也需要重置
     
     // 更新显示
     updateDisplay();
