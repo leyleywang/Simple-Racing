@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极速赛车</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="game-header">
+            <div class="info-panel">
+                <div class="info-item">
+                    <span class="label">分数</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">关卡</span>
+                    <span class="value" id="level">1</span>
+                </div>
+                <div class="info-item">
+                    <span class="label">时间</span>
+                    <span class="value" id="time">0</span>秒
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-canvas-wrapper">
+            <canvas id="gameCanvas" width="400" height="600"></canvas>
+        </div>
+        
+        <div class="game-overlay" id="startScreen">
+            <div class="overlay-content">
+                <h1>极速赛车</h1>
+                <p class="subtitle">准备好开始冒险了吗？</p>
+                <div class="instructions">
+                    <p>使用 <span class="key">←</span> <span class="key">→</span> 方向键控制赛车</p>
+                    <p>躲避障碍物，收集分数</p>
+                    <p>共8个关卡，难度递增</p>
+                </div>
+                <button class="btn" id="startBtn">开始游戏</button>
+            </div>
+        </div>
+        
+        <div class="game-overlay" id="gameOverScreen" style="display: none;">
+            <div class="overlay-content">
+                <h1>游戏结束</h1>
+                <div class="result-info">
+                    <p>最终分数: <span id="finalScore">0</span></p>
+                    <p>行驶时间: <span id="finalTime">0</span>秒</p>
+                    <p>到达关卡: <span id="finalLevel">1</span></p>
+                </div>
+                <button class="btn" id="restartBtn">重新出发</button>
+            </div>
+        </div>
+        
+        <div class="game-overlay" id="levelUpScreen" style="display: none;">
+            <div class="overlay-content">
+                <h1>关卡完成！</h1>
+                <p class="subtitle">进入第 <span id="nextLevel">2</span> 关</p>
+                <div class="level-preview">
+                    <p>新关卡特点：<span id="levelFeature">更快的速度</span></p>
+                </div>
+                <button class="btn" id="nextLevelBtn">继续</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="game.js"></script>
+</body>
+</html>
